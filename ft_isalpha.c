@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lminasia <lminasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/26 20:44:29 by lminasia          #+#    #+#             */
-/*   Updated: 2026/01/26 21:20:25 by lminasia         ###   ########.fr       */
+/*   Created: 2026/01/26 21:15:26 by lminasia          #+#    #+#             */
+/*   Updated: 2026/01/26 21:19:25 by lminasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stddef.h> //size_t type
-
-size_t	ft_strlen(const char *s);
-int		ft_isalpha(const char c);
-
-#endif
+int	ft_isalpha(const char c)
+{
+	if (c <= '9' && c >= '0')
+		return (1);
+	return (0);
+}

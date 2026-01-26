@@ -4,7 +4,8 @@ CC = cc #C compiler
 
 CFLAGS = -Wall -Wextra -Werror #mandatory compilation flags
 
-SRC = ft_strlen.c #source files
+SRC = ft_strlen.c \
+	ft_isalpha.c #source files
 
 OBJ = $(SRC:.c=.o) #object files derived from sources
 
