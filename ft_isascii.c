@@ -6,13 +6,13 @@
 /*   By: lminasia <lminasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 15:54:28 by lminasia          #+#    #+#             */
-/*   Updated: 2026/01/27 16:08:06 by lminasia         ###   ########.fr       */
+/*   Updated: 2026/01/27 16:49:03 by lminasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(const char c)
+int	ft_isascii(int c)
 {
 	if (c <= 127 && c >= 0)
 		return (1);

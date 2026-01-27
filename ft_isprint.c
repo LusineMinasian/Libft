@@ -6,13 +6,13 @@
 /*   By: lminasia <lminasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 15:59:20 by lminasia          #+#    #+#             */
-/*   Updated: 2026/01/27 15:59:23 by lminasia         ###   ########.fr       */
+/*   Updated: 2026/01/27 16:48:32 by lminasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(const char c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c != 127)
 		return (1);

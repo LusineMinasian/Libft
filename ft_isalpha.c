@@ -6,13 +6,13 @@
 /*   By: lminasia <lminasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 02:31:56 by lminasia          #+#    #+#             */
-/*   Updated: 2026/01/27 15:48:39 by lminasia         ###   ########.fr       */
+/*   Updated: 2026/01/27 16:48:07 by lminasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(const char c)
+int	ft_isalpha(int c)
 {
 	if ((c <= 'z' && c >= 'a') || (c <= 'Z' && c >= 'A'))
 		return (1);

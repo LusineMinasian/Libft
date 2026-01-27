@@ -6,13 +6,13 @@
 /*   By: lminasia <lminasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 15:47:28 by lminasia          #+#    #+#             */
-/*   Updated: 2026/01/27 16:07:50 by lminasia         ###   ########.fr       */
+/*   Updated: 2026/01/27 16:48:20 by lminasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(const char c)
+int	ft_isalnum(int c)
 {
 	if (c <= '9' && c >= '0')
 	{
