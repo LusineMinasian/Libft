@@ -1,31 +1,22 @@
-NAME = libft.a #output static library name
+NAME = libft.a
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
 
-CC = cc #C compiler
+SRC = ft_strlen.c ft_isalpha.c
+OBJ = $(SRC:.c=.o)
 
-CFLAGS = -Wall -Wextra -Werror #mandatory compilation flags
+all: $(NAME)
 
-SRC = ft_strlen.c \
-	ft_isalpha.c #source files
+$(NAME): $(OBJ)
+	ar rcs $@ $^
 
-OBJ = $(SRC:.c=.o) #object files derived from sources
-
-all: $(NAME) #default target
-
-#build static library from object files
-$(NAME): $(OBJ) 
-	ar rcs $(NAME) $(OBJ)
-
-#compile .c to .o
-#rebuild if header changes
 %.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
-#remove object files
 clean:
 	rm -f $(OBJ)
 
-#remove objects and library
 fclean: clean
 	rm -f $(NAME)
 
-re: fclean all #full rebuild
+re: fclean all

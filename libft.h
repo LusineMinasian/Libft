@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lminasia <lminasia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lminasia <lminasia@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/26 20:44:29 by lminasia          #+#    #+#             */
-/*   Updated: 2026/01/26 21:20:25 by lminasia         ###   ########.fr       */
+/*   Created: 2026/01/27 02:35:38 by lminasia          #+#    #+#             */
+/*   Updated: 2026/01/27 02:35:42 by lminasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@
 # include <stddef.h> //size_t type
 
 size_t	ft_strlen(const char *s);
-int		ft_isalpha(const char c);
+int		ft_isalpha(int c);
 
 #endif
