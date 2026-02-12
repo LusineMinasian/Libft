@@ -6,7 +6,7 @@
 /*   By: lminasia <lminasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 02:35:38 by lminasia          #+#    #+#             */
-/*   Updated: 2026/01/28 16:17:00 by lminasia         ###   ########.fr       */
+/*   Updated: 2026/02/12 18:16:35 by lminasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 void	*ft_memset(void *s, int c, size_t len);
+size_t		ft_strlen(const char *s);
 
 #endif

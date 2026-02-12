@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lminasia <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/12 18:27:33 by lminasia          #+#    #+#             */
+/*   Updated: 2026/02/12 18:27:45 by lminasia         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
+//#include <string.h>
+//#include <stdio.h>
 
 size_t	ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsize)
 {
@@ -9,17 +21,18 @@ size_t	ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsize
 	size_t	maxcopy;
 
 	i = 0;
-	dstlen = strlen(dst);
+	dstlen = ft_strlen(dst);
 	maxcopy = dstsize - dstlen - 1;
 	while ((src[i] != '\0') && (i < maxcopy))
 	{
-		dst[i + dstsize] = src[i];
+		dst[i + dstlen] = src[i];
 		i++;
 	}
-	dst[i] = '\0';
-	return (dstlen + strlen(src));
+	dst[i + dstlen] = '\0';
+	return (dstlen + ft_strlen(src));
 }
 
+/*
 int	main(void)
 {
 	char	a[] = "Hi";
@@ -30,3 +43,4 @@ int	main(void)
 	printf("after editing: %s", b);
 	return (0);
 }
+*/
