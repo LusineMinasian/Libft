@@ -12,7 +12,6 @@
 
 #include "libft.h"
 #include <stdlib.h>
-// #include <stdio.h>
 
 static size_t	ft_wordcount(char const *s, char c)
 {
@@ -101,32 +100,3 @@ char	**ft_split(char const *s, char c)
 	res[k] = NULL;
 	return (res);
 }
-
-/*
-int	main(void)
-{
-	char	**res;
-	size_t	i;
-
-	res = ft_split("Hello   worl how to write ?", ' ');
-	if (!res)
-	{
-		printf("ft_split failed\n");
-		return (1);
-	}
-	i = 0;
-	while (res[i] != NULL)
-	{
-		printf("res[%zu] = \"%s\"\n", i, res[i]);
-		i++;
-	}
-	i = 0;
-	while (res[i] != NULL)
-	{
-		free(res[i]);
-		i++;
-	}
-	free(res);
-	return (0);
-}
-*/

@@ -30,4 +30,3 @@ void	ft_putnbr_fd(int n, int fd)
 	c = (char)((nb % 10) + '0');
 	write(fd, &c, 1);
 }
-

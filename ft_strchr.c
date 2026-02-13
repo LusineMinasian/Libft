@@ -12,12 +12,12 @@
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	const unsigned char	*ptr;
 	unsigned char		byte;
-	size_t			i;
-	size_t			len;
+	size_t				i;
+	size_t				len;
 
 	ptr = (const unsigned char *)s;
 	byte = (unsigned char)c;
