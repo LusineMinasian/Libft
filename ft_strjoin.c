@@ -29,10 +29,16 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	i = 0;
 	while (i < s1len)
-		sjoin[i] = s1[i++];
+	{
+		sjoin[i] = s1[i];
+		i++;
+	}
 	j = 0;
 	while (j < s2len)
-		sjoin[i + j] = s2[j++];
+	{
+		sjoin[i + j] = s2[j];
+		j++;
+	}
 	sjoin[i + j] = '\0';
 	return (sjoin);
 }

@@ -11,13 +11,36 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
+static int	ft_lstmap_append(t_list **head, t_list **tail, void *content,
+				void (*del)(void *))
+{
+	t_list	*node;
+
+	node = ft_lstnew(content);
+	if (!node)
+	{
+		del(content);
+		ft_lstclear(head, del);
+		return (0);
+	}
+	if (!*head)
+	{
+		*head = node;
+		*tail = node;
+	}
+	else
+	{
+		(*tail)->next = node;
+		*tail = node;
+	}
+	return (1);
+}
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_head;
 	t_list	*new_tail;
-	t_list	*new_node;
 	void	*new_content;
 
 	if (!f || !del)
@@ -32,23 +55,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			ft_lstclear(&new_head, del);
 			return (NULL);
 		}
-		new_node = ft_lstnew(new_content);
-		if (!new_node)
-		{
-			del(new_content);
-			ft_lstclear(&new_head, del);
+		if (!ft_lstmap_append(&new_head, &new_tail, new_content, del))
 			return (NULL);
-		}
-		if (!new_head)
-		{
-			new_head = new_node;
-			new_tail = new_node;
-		}
-		else
-		{
-			new_tail->next = new_node;
-			new_tail = new_node;
-		}
 		lst = lst->next;
 	}
 	return (new_head);

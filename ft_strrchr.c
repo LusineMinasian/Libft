@@ -15,19 +15,17 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	unsigned char		byte;
-	const unsigned char	*ptr;
-	size_t				len;
-	size_t				i;
+	const char			*last;
 
-	len = ft_strlen(s) + 1;
 	byte = (unsigned char)c;
-	ptr = (const unsigned char *)s;
-	i = len;
-	while (i > 0)
+	last = NULL;
+	while (*s)
 	{
-		if (ptr[i - 1] == byte)
-			return ((char *)(s + (i - 1)));
-		i--;
+		if ((unsigned char)*s == byte)
+			last = s;
+		s++;
 	}
-	return (NULL);
+	if (byte == '\0')
+		return ((char *)s);
+	return ((char *)last);
 }

@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <string.h>
-//#include <stdio.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
@@ -21,26 +19,19 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	maxcopy;
 
 	i = 0;
-	dstlen = ft_strlen(dst);
+	if (dstsize == 0)
+		return (ft_strlen(src));
+	dstlen = 0;
+	while (dstlen < dstsize && dst[dstlen] != '\0')
+		dstlen++;
+	if (dstlen == dstsize)
+		return (dstsize + ft_strlen(src));
 	maxcopy = dstsize - dstlen - 1;
-	while ((src[i] != '\0') && (i < maxcopy))
+	while (src[i] != '\0' && i < maxcopy)
 	{
-		dst[i + dstlen] = src[i];
+		dst[dstlen + i] = src[i];
 		i++;
 	}
-	dst[i + dstlen] = '\0';
+	dst[dstlen + i] = '\0';
 	return (dstlen + ft_strlen(src));
 }
-
-/*
-int	main(void)
-{
-	char	a[] = "Hi";
-	char	b[10] = "Hello!";
-	
-	printf("before editing: %s \n", b);
-	ft_strlcat(b, a, 10);
-	printf("after editing: %s", b);
-	return (0);
-}
-*/
