@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lminasia <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lminasia <lminasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 23:14:44 by lminasia          #+#    #+#             */
-/*   Updated: 2026/02/12 23:17:09 by lminasia         ###   ########.fr       */
+/*   Updated: 2026/02/14 00:12:07 by lminasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ char	**ft_split(char const *s, char c)
 		while (s[i] != '\0' && s[i] == c)
 			i++;
 		if (s[i] == '\0')
-			break;
+			break ;
 		start = i;
 		while (s[i] != '\0' && s[i] != c)
 			i++;
