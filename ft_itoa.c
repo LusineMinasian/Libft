@@ -41,5 +41,4 @@ char	*ft_itoa(int n)
 		nb = nb / 10;
 	}
 	return (str);
-
 }	
