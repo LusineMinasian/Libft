@@ -14,16 +14,12 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	unsigned char		byte;
-	const char			*last;
-	size_t				i;
+	unsigned char	byte;
+	const char		*last;
 
-	if (!s)
-		return (NULL);
 	byte = (unsigned char)c;
 	last = NULL;
-	i = 0;
-	while (s[i] != '\0')
+	while (*s)
 	{
 		if ((unsigned char)*s == byte)
 			last = s;

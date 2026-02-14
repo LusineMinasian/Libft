@@ -1,5 +1,5 @@
 NAME = libft.a
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 SRC = ft_strlen.c \
@@ -64,7 +64,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-bonus: all
 
 .PHONY: all bonus clean fclean re

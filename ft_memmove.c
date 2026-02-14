@@ -11,24 +11,15 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdint.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+static void	fill_memory(unsigned char *d, const unsigned char *s, size_t count)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
-	size_t				i;
+	size_t			i;
 
-	d = (unsigned char *)dst;
-	s = (const unsigned char *)src;
-	if (!d && !src)
-		return (NULL);
-	if (d == s || len == 0)
-		return (dst);
 	if (d < s)
 	{
 		i = 0;
-		while (i < len)
+		while (i < count)
 		{
 			d[i] = s[i];
 			i++;
@@ -36,12 +27,26 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	else
 	{
-		i = len;
+		i = count;
 		while (i > 0)
 		{
 			d[i - 1] = s[i - 1];
 			i--;
 		}
 	}
+}
+
+void	*ft_memmove(void *dst, const void *src, size_t count)
+{
+	unsigned char		*d;
+	const unsigned char	*s;
+
+	d = (unsigned char *)dst;
+	s = (const unsigned char *)src;
+	if (!d && !src)
+		return (NULL);
+	if (d == s || count == 0)
+		return (dst);
+	fill_memory(d, s, count);
 	return (dst);
 }
