@@ -6,7 +6,7 @@
 /*   By: lminasia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 21:46:09 by lminasia          #+#    #+#             */
-/*   Updated: 2026/02/12 21:46:12 by lminasia         ###   ########.fr       */
+/*   Updated: 2026/02/14 17:46:03 by lminasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	i = 0;
 	while (start < end)
-	{
-		strim[i] = s1[start];
-		i++;
-		start++;
-	}
+		strim[i++] = s1[start++];
 	strim[i] = '\0';
 	return (strim);
 }

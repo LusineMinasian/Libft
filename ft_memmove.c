@@ -6,7 +6,7 @@
 /*   By: lminasia <lminasia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/01 03:47:16 by lminasia          #+#    #+#             */
-/*   Updated: 2026/02/14 00:15:22 by lminasia         ###   ########.fr       */
+/*   Updated: 2026/02/14 17:48:46 by lminasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,15 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		return (dst);
 	if (d < s)
 	{
-		i = 0;
-		while (i < len)
-		{
+		i = -1;
+		while (++i < len)
 			d[i] = s[i];
-			i++;
-		}
 	}
 	else
 	{
 		i = len;
-		while (i > 0)
-		{
-			i--;
+		while (i-- > 0)
 			d[i] = s[i];
-		}
 	}
 	return (dst);
 }

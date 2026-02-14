@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lminasia <lminasia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lminasia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/12 23:14:44 by lminasia          #+#    #+#             */
-/*   Updated: 2026/02/14 00:12:07 by lminasia         ###   ########.fr       */
+/*   Created: 2026/02/14 17:56:12 by lminasia          #+#    #+#             */
+/*   Updated: 2026/02/14 17:57:49 by lminasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,37 +66,45 @@ static char	*ft_makeword(char const *s, size_t start, size_t end)
 	return (word);
 }
 
-char	**ft_split(char const *s, char c)
+static int	fill_split(char const *s, char c, char **res)
 {
 	size_t	i;
 	size_t	k;
 	size_t	start;
-	char	**res;
 
-	if (!s)
-		return (NULL);
-	res = malloc((ft_wordcount(s, c) + 1) * sizeof(char *));
-	if (!res)
-		return (NULL);
 	i = 0;
 	k = 0;
-	while (s[i] != '\0')
+	while (s[i])
 	{
-		while (s[i] != '\0' && s[i] == c)
+		while (s[i] && s[i] == c)
 			i++;
-		if (s[i] == '\0')
+		if (!s[i])
 			break ;
 		start = i;
-		while (s[i] != '\0' && s[i] != c)
+		while (s[i] && s[i] != c)
 			i++;
 		res[k] = ft_makeword(s, start, i);
 		if (!res[k])
 		{
 			ft_freesplit(res, k);
-			return (NULL);
+			return (0);
 		}
 		k++;
 	}
 	res[k] = NULL;
+	return (1);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**res;
+
+	if (!s)
+		return (NULL);
+	res = (char **)malloc((ft_wordcount(s, c) + 1) * sizeof(char *));
+	if (!res)
+		return (NULL);
+	if (!fill_split(s, c, res))
+		return (NULL);
 	return (res);
 }
