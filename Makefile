@@ -1,5 +1,5 @@
 NAME = libft.a
-CC = cc
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 SRC = ft_strlen.c \

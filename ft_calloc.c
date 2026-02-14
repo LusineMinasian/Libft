@@ -6,13 +6,15 @@
 /*   By: lminasia <lminasia@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 19:23:02 by lminasia          #+#    #+#             */
-/*   Updated: 2026/02/11 20:21:46 by lminasia         ###   ########.fr       */
+/*   Updated: 2026/02/14 21:44:57 by lminasia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 #include <stdlib.h>
 #include <limits.h>
+#include <stdint.h>
 // #include <string.h>
 // #include <stdio.h>
 
